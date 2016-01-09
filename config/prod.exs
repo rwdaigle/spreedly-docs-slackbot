@@ -56,6 +56,9 @@ config :logger, level: :info
 #     config :spreedly_docs_slackbot, SpreedlyDocsSlackbot.Endpoint, server: true
 #
 
+config :spreedly_docs_slackbot, :search_api, SpreedlyDocsSlackbot.Search.Mock
+# config :spreedly_docs_slackbot, :search_api, SpreedlyDocsSlackbot.Search.GoogleCse
+
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"

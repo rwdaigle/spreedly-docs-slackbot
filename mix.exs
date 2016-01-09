@@ -17,7 +17,7 @@ defmodule SpreedlyDocsSlackbot.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {SpreedlyDocsSlackbot, []},
-     applications: [:phoenix, :cowboy, :logger]]
+     applications: [:phoenix, :cowboy, :httpoison, :logger]]
   end
 
   # Specifies which paths to compile per environment.
@@ -28,7 +28,10 @@ defmodule SpreedlyDocsSlackbot.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.0.4"},
-     {:cowboy, "~> 1.0"}]
+    [
+      {:phoenix, "~> 1.0.4"},
+      {:cowboy, "~> 1.0"},
+      {:httpoison, "~> 0.8.0"}
+    ]
   end
 end

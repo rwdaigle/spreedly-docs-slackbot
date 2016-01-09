@@ -5,13 +5,15 @@ defmodule SpreedlyDocsSlackbot.CommandControllerTest do
     conn =
       conn
       |> put_req_header("accept", "application/x-www-form-urlencoded")
-      |> post("/execute")
+      |> post("/execute", [command: "/docs", text: "stripe purchase"])
 
-    assert response(conn, 200) =~ """
-      1. Here is a test search result
-      http://google.com
-      2. And another
+    assert response(conn, 200) =~ String.strip """
+      1. *First*: This is the first result I found
       http://spreedly.com
+      2. *Second*: This is the second result I found
+      http://ryandaigle.com
+      3. *Third*: This is the third result I found
+      http://yahoo.com
       """
   end
 end

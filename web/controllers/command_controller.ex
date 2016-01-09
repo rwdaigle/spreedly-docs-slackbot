@@ -1,9 +1,15 @@
 defmodule SpreedlyDocsSlackbot.CommandController do
   use SpreedlyDocsSlackbot.Web, :controller
 
-  def execute(conn, _params) do
-    conn
-    |> put_format("text")
-    |> render(:results, results: [])
+  @search_api Application.get_env(:spreedly_docs_slackbot, :search_api)
+
+  def execute(conn, %{"command" => "/docs", "text" => query}) do
+    render(conn, "results.text", results: search(query))
+  end
+
+  def execute(conn, _params), do: conn |> text("I can't do anything with that")
+
+  defp search(query) do
+    @search_api.search(query)
   end
 end

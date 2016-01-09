@@ -6,5 +6,7 @@ config :spreedly_docs_slackbot, SpreedlyDocsSlackbot.Endpoint,
   http: [port: 4001],
   server: false
 
+config :spreedly_docs_slackbot, :search_api, SpreedlyDocsSlackbot.Search.Mock
+
 # Print only warnings and errors during test
 config :logger, level: :warn

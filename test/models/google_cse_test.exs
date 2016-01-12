@@ -2,7 +2,6 @@ defmodule SpreedlyDocsSlackbot.GoogleCseTest do
 
   use ExUnit.Case, async: true
   alias SpreedlyDocsSlackbot.Search.GoogleCse, as: Google
-  alias SpreedlyDocsSlackbot.SearchResult, as: Result
 
   @moduletag :remote
 

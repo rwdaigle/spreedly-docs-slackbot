@@ -7,7 +7,9 @@ defmodule SpreedlyDocsSlackbot.CommandControllerTest do
       |> put_req_header("accept", "application/x-www-form-urlencoded")
       |> post("/execute", [command: "/docs", text: "stripe purchase"])
 
-    assert response(conn, 200) =~ String.strip """
+    assert response(conn, 200) == String.strip """
+      Your search results for \"stripe purchase\":
+      
       1. *First*: This is the first result I found
       http://spreedly.com
       2. *Second*: This is the second result I found

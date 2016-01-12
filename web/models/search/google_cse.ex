@@ -21,6 +21,9 @@ defmodule SpreedlyDocsSlackbot.Search.GoogleCse do
   end
 
   defp parse_results({:error, msg}), do: msg
+  defp parse_results({:ok, %{"searchInformation" => %{"totalResults" => "0"}}}) do
+    "No results found"
+  end
   defp parse_results({:ok, %{"items" => results}}) do
     results
     |> Enum.slice(0..2)

@@ -1,6 +1,5 @@
 defmodule SpreedlyDocsSlackbot.SearchTest do
-
-  use SpreedlyDocsSlackbot.ModelCase
+  use ExUnit.Case, async: true
 
   test "config" do
     assert Application.get_env(:spreedly_docs_slackbot, :search_api) == SpreedlyDocsSlackbot.Search.Mock

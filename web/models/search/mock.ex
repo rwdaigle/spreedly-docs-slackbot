@@ -5,7 +5,7 @@ defmodule SpreedlyDocsSlackbot.Search.Mock do
 
   def search(query) do
     [
-      %Result{title: "First", description: "This is the first result I found",
+      %Result{title: "First - Spreedly Documentation", description: "This is the first result I found",
         url: "http://spreedly.com"},
       %Result{title: "Second", description: "This is the second result I found",
         url: "http://ryandaigle.com"},

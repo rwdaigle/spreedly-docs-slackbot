@@ -18,6 +18,7 @@ defmodule SpreedlyDocsSlackbot.CommandView do
   end
 
   defp format_result({%Result{title: title, description: description, url: url}, index}) do
+    title = String.replace(title, " - Spreedly Documentation", "")
     String.strip """
       #{index + 1}. *#{title}*: #{description}
       #{url}

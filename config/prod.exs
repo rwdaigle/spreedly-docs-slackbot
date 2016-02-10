@@ -56,8 +56,8 @@ config :logger, level: :info
 #     config :spreedly_docs_slackbot, SpreedlyDocsSlackbot.Endpoint, server: true
 #
 
-# config :spreedly_docs_slackbot, :search_api, SpreedlyDocsSlackbot.Search.Mock
-config :spreedly_docs_slackbot, :search_api, SpreedlyDocsSlackbot.Search.GoogleCse
-
 config :spreedly_docs_slackbot, SpreedlyDocsSlackbot.Endpoint,
   secret_key_base: System.get_env("APP_SECRET_KEY_BASE")
+
+# config :spreedly_docs_slackbot, :search_api, SpreedlyDocsSlackbot.Search.Mock
+config :spreedly_docs_slackbot, :search_api, SpreedlyDocsSlackbot.Search.GoogleCse

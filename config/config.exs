@@ -19,6 +19,10 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :spreedly_docs_slackbot, :google_cse_id, System.get_env("GOOGLE_CSE_ID") || "017702608363483260481:mhdgz-b3lju"
+config :spreedly_docs_slackbot, :google_api_key, System.get_env("GOOGLE_API_KEY")
+config :spreedly_docs_slackbot, :slack_token, System.get_env("SLACK_TOKEN")
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

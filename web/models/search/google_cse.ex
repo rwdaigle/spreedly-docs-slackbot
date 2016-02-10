@@ -38,8 +38,8 @@ defmodule SpreedlyDocsSlackbot.Search.GoogleCse do
 
   defp params(query) do
     %{
-      key: "AIzaSyDLcnqFAn0wymps1wTO0XTHWRL8F9l5vxc",
-      cx: "017702608363483260481:mhdgz-b3lju",
+      key: Application.get_env(:spreedly_docs_slackbot, :google_api_key),
+      cx: Application.get_env(:spreedly_docs_slackbot, :google_cse_id),
       l: 3,
       q: query
     }

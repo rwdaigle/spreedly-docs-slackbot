@@ -6,10 +6,7 @@ defmodule SpreedlyDocsSlackbot.CommandController do
   def execute(conn, %{"command" => "/docs", "text" => query}) do
     render(conn, "results.text", query: query, results: search(query))
   end
-
   def execute(conn, _params), do: conn |> text("I can't do anything with that")
 
-  defp search(query) do
-    @search_api.search(query)
-  end
+  defp search(query), do: @search_api.search(query)
 end

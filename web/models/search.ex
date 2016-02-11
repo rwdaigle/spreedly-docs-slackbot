@@ -1,5 +1,6 @@
 defmodule SpreedlyDocsSlackbot.Search do
+  use Behaviour
 
   @doc "Search for the given term"
-  @callback search(query :: String.t) :: [%SpreedlyDocsSlackbot.SearchResult{}]
+  defcallback search(query :: String.t) :: [%SpreedlyDocsSlackbot.SearchResult{}]
 end
